@@ -1,7 +1,7 @@
 require_relative '../credit_card'
 require_relative '../substitution_cipher'
 require 'minitest/autorun'
-
+require_relative '../double_trans_cipher.rb'
 describe 'Test card info encryption' do
   before do
     @cc = CreditCard.new('4916603231464963', 'Mar-30-2020', 'Soumya Ray', 'Visa')
@@ -37,5 +37,6 @@ describe 'Test card info encryption' do
   end
 
   # TODO: Add tests for double transposition and modern symmetric key ciphers
+  
   #       Can you DRY out the tests using metaprogramming? (see lecture slide)
 end

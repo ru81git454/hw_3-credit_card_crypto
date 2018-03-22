@@ -42,7 +42,7 @@ class CreditCard
     #   - Produce a hash (using default hash method) of the credit card's
     #     serialized contents.
     #   - Credit cards with identical information should produce the same hash
-    contents=Hash.new
+    to_s.hash
 
 
   end
@@ -52,5 +52,7 @@ class CreditCard
     # TODO: implement this method
     #   - Use sha256 from openssl to create a cryptographically secure hash.
     #   - Credit cards with identical information should produce the same hash
+    sha256 = OpenSSL::Digest::SHA256.new
+    sha256.digest(to_s).unpack('H*')
   end
 end
